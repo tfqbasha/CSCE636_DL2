@@ -1,0 +1,3 @@
+cp -rf /content/drive/My\ Drive/Colab\ Notebooks/CSCE636/Data/data_clips_100_2class_jpg/opening\ refrigerator/D0XyROrTMKU_000010_000020 /content/drive/My\ Drive/Colab\ Notebooks/CSCE636/Data/data_clips_100_ref_test/opening_refrigerator/
+cp -rf /content/drive/My\ Drive/Colab\ Notebooks/CSCE636/Data/data_clips_100_2class_jpg/opening\ refrigerator/dXGdWJITkdU_000014_000024 /content/drive/My\ Drive/Colab\ Notebooks/CSCE636/Data/data_clips_100_ref_test/opening_refrigerator/
+cp -rf /content/drive/My\ Drive/Colab\ Notebooks/CSCE636/Data/data_clips_100_2class_jpg/opening\ refrigerator/eexhb-2WwYo_000018_000028 //content/drive/My\ Drive/Colab\ Notebooks/CSCE636/Data/data_clips_100_ref_test/opening_refrigerator/
