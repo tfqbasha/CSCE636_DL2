@@ -8,3 +8,5 @@ Steps to run the trained model:
 4. In TEST_CELL make sure that you have set the test_videos_path and test_list_path correctly, corresponding to the downloads from step2 and step3 respectively.
 
 5. Run the TEST_CELL jupyter cell.
+
+To access the google drive, you have to login with tamu id
