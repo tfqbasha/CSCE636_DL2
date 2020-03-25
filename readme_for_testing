@@ -1,0 +1,10 @@
+Steps to run the trained model:
+1. Download the trained model from here:
+   https://drive.google.com/open?id=17IULo40ycQMK851drf8pqMMK86m3iVK7
+2. Download the pre-proceesed input from here:
+  https://drive.google.com/open?id=10B9imnNm0lgi1tfE4DMGKb_ztCXi3BnE
+3. Download the file containing the list of above downloaded input or create your own:
+   https://drive.google.com/open?id=1aXY5ku1PIx0eNtaycdbjfJmiMAC58Qc0
+4. In TEST_CELL make sure that you have set the test_videos_path and test_list_path correctly, corresponding to the downloads from step2 and step3 respectively.
+
+5. Run the TEST_CELL jupyter cell.
