@@ -30,7 +30,7 @@ You can use UCF101 or other datasets, which should be orgnized as :
 ### 2. Prepare dataset for training
 convert video to jpgs with:
 ```
-python utils/ucf_hmdb51_frames.py UCF101 UCF101_jpg
+python utils/ucf_hmdb51_video2jpg.py UCF101 UCF101_jpg
 ```
 calculate the video's frames
 ```
@@ -52,3 +52,4 @@ bash train.sh
 [1] [SlowFastNetworks](https://github.com/RI-CH/SlowFastNetworks)<br>
 [2] [3D-ResNets-Pytorch](https://github.com/kenshohara/3D-ResNets-PyTorch)<br>
 [3] [SGDR](https://gist.github.com/jeremyjordan/5a222e04bb78c242f5763ad40626c452)
+[4] [kerasSlowFast](https://github.com/xuzheyuan624/slowfast-keras)
