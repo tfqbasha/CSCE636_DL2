@@ -1,3 +1,4 @@
-Memory leaks with tensorflow 2.1.0
+#Memory leaks with tensorflow 2.1.0
 solution: I had saved the tensorflow version I had used before: tensforflow 1.15.0, switched back to same
 learning: Always keep track of dependencies.
+tools: to check tensorflow version: python3 -c 'import tensorflow as tf; print(tf.__version__)'
