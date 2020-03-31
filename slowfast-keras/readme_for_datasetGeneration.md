@@ -4,4 +4,4 @@ The makedataset module prepares the dataset from the video_files and label_files
 the return of this module is a dictionary which contains the input 'video_path', 'label' 
 and 'frame_indices' to be used for each input sample. 
 The data could be split into multiple sub-datas by using n_samples_per_each_video, it basically splits one video into multiple samples. 
-Finally, the data_generator module converts the input video(it's jpgs) into a numpy array of shape (1, 64, 224, 224, 3) and labels into a matrix of shape (1,2). The data_generator module takes batch_dataset as input, which is a subset of dataset(dictionary containing video_path', 'label' and 'frame_indices')  based on batch size.
+Finally, the data_generator module converts the input video(it's jpgs) into a numpy array of shape (batch_size, 64, 224, 224, 3) and labels into a matrix of shape (batch_size,number_of_classes). The data_generator module takes batch_dataset as input, which is a subset of dataset(dictionary containing video_path', 'label' and 'frame_indices')  based on batch size. Please note that the spatial and temporal transforms happen at this stage.
