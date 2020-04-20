@@ -83,6 +83,7 @@ class DataGenerator(Sequence):
         return math.ceil(len(self.video_files)/self.batch_size)
 
     def __getitem__(self, index):
+          print('mbashat: The batch_dataset for index:', index)
           batch_dataset = self.dataset[index*self.batch_size:(index+1)*self.batch_size]
           video_data, label_data = self.data_generator(batch_dataset)
           if self.to_fit:
