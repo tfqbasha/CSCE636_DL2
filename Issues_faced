@@ -2,3 +2,10 @@
 solution: I had saved the tensorflow version I had used before: tensforflow 1.15.0, switched back to same
 learning: Always keep track of dependencies and/or work in offline envirenments.
 tools: to check tensorflow version: python3 -c 'import tensorflow as tf; print(tf.__version__)'
+
+**Autoreload**
+The python modules are not reloaded evertime you use 'import'. After first time, the Jupyter environment assumes that it already 
+has the requried modules. This could be a cause of problem if you are editing the modules and parallely check the working.
+https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html
+
+
