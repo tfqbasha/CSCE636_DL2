@@ -1,5 +1,5 @@
-!pip install tensorflow==1.15.0
-!python3 -c 'import tensorflow as tf; print(tf.__version__)'
+#!pip install tensorflow==1.15.0
+#!python3 -c 'import tensorflow as tf; print(tf.__version__)'
 
 import tensorflow as tf
 from tensorflow.keras import backend as K
@@ -17,18 +17,20 @@ import numpy as np
 import os
 from dataset.utils import load_value_file
 import math
+import json
+import matplotlib.pyplot as plt
+
 #from tensorflow.python.keras.layers import Layer, InputSpec
+dir=$(pwd)
 class Args:
-  root_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/slowfast-keras2Class/slowfast-keras'
-  video_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref_jpg'
-  #name_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/classInd.txt'
-  name_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/STAIR_Actions_jpg/classInd.txt'
-  #name_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_2class_jpg/classInd.txt'
-  train_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/train.txt'
-  val_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/test.txt'
+  root_path = '$dir/slowfast-keras'
+  #video_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref_jpg'
+  name_path = '$dir/test_jpg/classInd.txt'
+  #train_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/train.txt'
+  #val_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/test.txt'
   result_path = 'results'
   data_name = 'ntu'
-    gpus = [0]
+  gpus = [0]
   log_dir = 'log'
   num_classes = 2
   crop_size = 224
@@ -48,8 +50,8 @@ class Args:
   workers = 5
   network = 'resnet50'
   pretrained_weights = None
-  test_list_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/test_jpg/test.txt'
-  test_videos_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/test_jpg'
+  test_list_path = '$dir/test_jpg/test.txt'
+  test_videos_path = '$dir/test_jpg'
   split_frames_for_test = 6
 
 opt = Args()
@@ -96,11 +98,6 @@ while(i<opt.split_frames_for_test):
   fileJson[fileName].append([str(start_frame), str(end_frame ), str(model_predicted_argmax[i]) ] )
   i += 1
 
-print(fileJson)
-print('sizeofx and y', x_for_plot, model_predicted_argmax )
-import json
-%matplotlib inline
-import matplotlib.pyplot as plt
 with open("529005214.json", "w") as outfile: 
     json.dump(fileJson, outfile) 
 
