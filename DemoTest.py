@@ -23,9 +23,9 @@ import matplotlib.pyplot as plt
 #from tensorflow.python.keras.layers import Layer, InputSpec
 dir=os.getcwd()
 class Args:
-  root_path = './slowfast-keras'
+  root_path = '../slowfast-keras'
   #video_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref_jpg'
-  name_path = '../test_jpg/classInd.txt'
+  name_path = '../../test_jpg/classInd.txt'
   #train_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/train.txt'
   #val_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/test.txt'
   result_path = 'results'
@@ -50,8 +50,8 @@ class Args:
   workers = 5
   network = 'resnet50'
   pretrained_weights = None
-  test_list_path = '../test_jpg/test.txt'
-  test_videos_path = '../test_jpg'
+  test_list_path = '../../test_jpg/test.txt'
+  test_videos_path = '../../test_jpg'
   split_frames_for_test = 6
 
 opt = Args()
@@ -70,7 +70,7 @@ predict_data_generator = DataGenerator(opt.data_name, opt.test_videos_path, opt.
                                         opt.crop_size, opt.clip_len, opt.n_samples_for_each_video, False, opt.split_frames_for_test) 
 
 # load model
-model =  tf.keras.models.load_model('SlowFast_refrigerator_2904.h5')
+model =  tf.keras.models.load_model('../../SlowFast_refrigerator_2604.h5')
 model_predicted = model.predict(predict_data_generator)
 #model_evaluated = model.evaluate_generator(predict_data_generator)
 #print("Evaluate 2604: Loss and Accuracy", model_evaluated)
