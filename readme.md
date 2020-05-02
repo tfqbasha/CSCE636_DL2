@@ -18,9 +18,10 @@ https://drive.google.com/open?id=1dqpmHaItTEkz2ee-ueCIA45olaPo9OJe
 https://drive.google.com/open?id=1-7-weR1lfTQwwe6BSQ-AQfwijY-yR6Ww
 
 3. Keep the above two downloads in same folder and download this git repository in the same directory.         
-      git clone https://github.com/tfqbasha/CSCE636_DL2.git
+     >> git clone https://github.com/tfqbasha/CSCE636_DL2.git
       
-4. Run the DemoTest.py to generate the json and image.
+4. >> cd CSCE636_DL2
+5. >> python3.5 DemoTest.py  # to generate the json and image.
 
 PS: To access the google drive, you have to login with tamu id
 
