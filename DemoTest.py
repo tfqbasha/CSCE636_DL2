@@ -21,11 +21,11 @@ import json
 import matplotlib.pyplot as plt
 
 #from tensorflow.python.keras.layers import Layer, InputSpec
-dir=$(pwd)
+dir=os.getcwd()
 class Args:
-  root_path = '$dir/slowfast-keras'
+  root_path = 'slowfast-keras'
   #video_path = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref_jpg'
-  name_path = '$dir/test_jpg/classInd.txt'
+  name_path = 'test_jpg/classInd.txt'
   #train_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/train.txt'
   #val_list = '/content/drive/My Drive/Colab Notebooks/CSCE636/Data/data_clips_100_ref/test.txt'
   result_path = 'results'
@@ -50,8 +50,8 @@ class Args:
   workers = 5
   network = 'resnet50'
   pretrained_weights = None
-  test_list_path = '$dir/test_jpg/test.txt'
-  test_videos_path = '$dir/test_jpg'
+  test_list_path = 'test_jpg/test.txt'
+  test_videos_path = 'test_jpg'
   split_frames_for_test = 6
 
 opt = Args()
