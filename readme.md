@@ -23,7 +23,7 @@ git clone https://github.com/tfqbasha/CSCE636_DL2.git
 ```   
 4. Move to code directory
 ```
-cd CSCE636_DL2
+cd CSCE636_DL2/slowfast-keras
 ```  
 5. Run DemoTest.py to generate the json and image.
 ```
