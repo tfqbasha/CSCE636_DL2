@@ -11,8 +11,7 @@ from .utils import load_value_file, load_clip_video
 
 def get_ucf101(video_path, file_path, name_path, mode, num_classes):
     name2index = {}
-    #mbashat
-    print("ck2: into get_ucf101")
+
     lines = open(name_path, 'r').readlines()
     for i, class_name in enumerate(lines):
         class_name = class_name.split()[1]
@@ -44,15 +43,13 @@ class DataGenerator(Sequence):
     def __init__(self, data_name, video_path, file_path, 
                  name_path, mode, batch_size, num_classes, 
                  shuffle, short_side=[256, 320], crop_size=224, 
-                 clip_len=64, n_samples_for_each_video=1, to_fit=True):
+                 clip_len=64, n_samples_for_each_video=1, to_fit=True, split_frames_for_test=6):
         self.batch_size = batch_size
         self.num_classes = num_classes
         self.shuffle = shuffle
         self.to_fit = to_fit
-        #mbashat
-        print("ck1")
+        self.split_frames_for_test = split_frames_for_test
         if data_name != '0':
-            print("ck1 : in ")
             self.video_files, self.label_files = get_ucf101(video_path, file_path, name_path, mode, num_classes)
         else :
             print("data_name not matching")
@@ -80,8 +77,9 @@ class DataGenerator(Sequence):
             random.shuffle(self.dataset)
 
     def __len__(self):
-        global  n_itr 
-        n_itr = 6 #mbashat
+        global  n_itr
+        #n_itr = 6 #mbashat
+        n_itr = self.split_frames_for_test
         return math.ceil(len(self.video_files)*n_itr/self.batch_size)
 
     def __getitem__(self, index):
@@ -144,8 +142,8 @@ class DataGenerator(Sequence):
             frame_indices = data['frame_indices']
             length = len(frame_indices)
             global n_itr
-            frames_per_interval = math.ceil(length/6)  #mbashat
-            n_itr_rev = 6-n_itr #mbashat
+            frames_per_interval = math.ceil(length/self.split_frames_for_test)  #mbashat
+            n_itr_rev = self.split_frames_for_test-n_itr #mbashat
             #print("length and range  a:b", length, n_itr_rev*frames_per_interval, (n_itr_rev+1)*frames_per_interval )
             new_frame_indices = frame_indices[n_itr_rev*frames_per_interval:(n_itr_rev+1)*frames_per_interval]
             print("frame_indices itr", n_itr_rev, new_frame_indices)
